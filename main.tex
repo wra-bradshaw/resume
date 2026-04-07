@@ -1,0 +1,209 @@
+\documentclass{article}
+% A4 Paper setting locked in
+\usepackage[a4paper, total={6in, 8in}]{geometry}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\input{secrets-loader.tex}
+\ifdefined\pdfglyphtounicode
+  \input{glyphtounicode}
+\fi
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\setlength{\footskip}{6pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that generated PDF is machine readable/ATS parsable when supported
+\ifdefined\pdfgentounicode
+  \pdfgentounicode=1
+\fi
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+\begin{center}
+    {\Large\scshape William Bradshaw}  \\ \vspace{1pt}
+    \small \Secret{phone}  $|$ \href{mailto:\Secret{email}}{\underline{\Secret{email}}}  $|$
+    \href{https://linkedin.com/in/wra-bradshaw}{\underline{linkedin.com/in/wra-bradshaw}}  $|$
+    \href{https://github.com/wra-bradshaw}{\underline{github.com/wra-bradshaw}}
+\end{center}
+
+%-----------EDUCATION-----------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {University of Melbourne}{Melbourne, Victoria, Australia}
+      {Bachelor of Science, Computing and Software Systems}{Mar 2025 -- Nov 2027}
+      \resumeItemListStart
+        \resumeItem{Relevant Coursework: Design of Algorithms, Object-Oriented Software Development, Calculus 1 \& 2, Linear Algebra.}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Amazon Web Services Training and Certification}{Hobart, Tasmania, Australia}
+      {AWS Certified Developer Associate}{Oct 2024 -- Oct 2027}
+  \resumeSubHeadingListEnd
+
+%-----------EXPERIENCE-----------
+\section{Experience}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Junior Software Developer}{March 2024 -- February 2025}
+      {Ionata Digital}{Hobart, Tasmania}
+      \resumeItemListStart
+        \resumeItem{Led the technical delivery of palawahub.com.au, portarthur.org.au, and the 2024 Ionata Christmas Game.}
+        \resumeItem{Wrote code to resolve bugs and performance issues based on direct client feedback.}
+        \resumeItem{Managed technical communication with clients to translate non-technical requirements into specific software updates.}
+        \resumeItem{Ran manual pre-production testing to catch and fix edge cases prior to final handover.}
+      \resumeItemListEnd
+  \resumeSubHeadingListEnd
+
+%-----------EXTRACURRICULAR & LEADERSHIP-----------
+\section{Extracurricular \& Leadership}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Projects Officer}{March 2026 -- Present}
+      {CISSA (Computing and Information Systems Students Association)}{Melbourne, VIC}
+    \resumeSubheading
+      {IT Officer}{March 2026 -- Present}
+      {MISC (University of Melbourne Information Security Club)}{Melbourne, VIC}
+    \resumeItemListStart
+        \resumeItem{Triaged and fixed flickering navigation issues on the club website.}
+        \resumeItem{Diagnosed and resolved website rendering issues affecting iPhones in lockdown mode.}
+      \resumeItemListEnd
+  \resumeSubHeadingListEnd
+
+%-----------PROJECTS-----------
+\section{Projects}
+    \resumeSubHeadingListStart
+      \resumeProjectHeading
+          {\textbf{nix-darwin \& home-manager} $|$ \emph{Contributor} $|$ GitHub}{Aug 2024 -- Present}
+          \resumeItemListStart
+            \resumeItem{Resolved a complex race condition in launchd services via a project-wide codebase cleanup for nix-darwin.}
+            \resumeItem{Wrote the colima.nix module and updated docker-cli.nix for system-level environment management in home-manager.}
+          \resumeItemListEnd
+
+      \resumeProjectHeading
+          {\textbf{typst-wasm \& tsdown-plugin-worker} $|$ \emph{Maintainer} $|$ GitHub}{Feb 2026 -- Present}
+          \resumeItemListStart
+            \resumeItem{Built a WebAssembly (WASM) library to compile Typst code.}
+            \resumeItem{Maintained an open-source bundler plugin to support web workers for browser multithreading.}
+          \resumeItemListEnd
+
+      \resumeProjectHeading
+          {\textbf{Pingbot Redux} $|$ \emph{Developer} $|$ Website}{2024}
+          \resumeItemListStart
+            \resumeItem{Built an interactive 3D web application using Three.js, React Three Fiber, and React, bundled with Vike/Vite.}
+            \resumeItem{Built a serverless backend on AWS using Golang and Lambda, interfaced through API Gateway and DynamoDB.}
+            \resumeItem{Provisioned infrastructure as code using Terraform and deployed the frontend via CloudFront and S3.}
+          \resumeItemListEnd
+
+      \resumeProjectHeading
+          {\textbf{numberconverter} $|$ \emph{Maintainer} $|$ GitHub}{March 2024}
+          \resumeItemListStart
+            \resumeItem{Built a zero-dependency Go package to convert between integer values and their English word representations.}
+            \resumeItem{Wrote generic integer parsing and regex-based string replacement methods to handle arbitrary text formatting.}
+          \resumeItemListEnd
+
+      \resumeProjectHeading
+          {\textbf{noise} $|$ \emph{Maintainer} $|$ GitHub}{2024}
+          \resumeItemListStart
+            \resumeItem{Built a terminal UI application in Rust to generate and shape continuous white noise using a 15-band equalizer.}
+            \resumeItem{Wrote audio manipulation and keyboard state management for real-time gain adjustments and JSON-based preset configurations.}
+          \resumeItemListEnd
+
+      \resumeProjectHeading
+          {\textbf{ai-browser-api} $|$ \emph{Maintainer} $|$ GitHub}{Feb 2026 -- Present}
+          \resumeItemListStart
+            \resumeItem{Building a secure browser extension with a client-side ``Bring Your Own Key'' (BYOK) architecture.}
+          \resumeItemListEnd
+
+      \resumeProjectHeading
+          {\textbf{diagram-creator} $|$ \emph{Maintainer} $|$ GitHub}{Dec 2025 -- Present}
+          \resumeItemListStart
+            \resumeItem{Building an automated tool using AI to generate scientific and technical diagrams.}
+          \resumeItemListEnd
+    \resumeSubHeadingListEnd
+
+%-----------TECHNICAL SKILLS-----------
+\section{Technical Skills}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Languages}{: TypeScript, Nix, Golang, PHP, Java, Rust, C, Python} \\
+     \textbf{Concepts \& Cloud}{: Object-Oriented Design (OOD), Low-Latency/Performance Optimization (WASM, Web Workers), Terraform, DevOps, Amazon Web Services (AWS)} \\
+     \textbf{Frameworks \& Libraries}{: React.js, Vue.js, Three.js}
+    }}
+ \end{itemize}
+
+%-------------------------------------------
+\end{document}

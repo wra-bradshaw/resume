@@ -1,0 +1,8 @@
+.direnv
+.ruff_cache/
+main.aux
+main.fdb_latexmk
+main.fls
+main.log
+main.out
+main.pdf

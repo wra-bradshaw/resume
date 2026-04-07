@@ -1,0 +1,8 @@
+keys:
+  - &primary age1jugezl9teqxna33ljwq8gt0cmqza94ljc5cv3u2222auk40ym58qmnufry
+creation_rules:
+  - path_regex: secrets\.enc\.yaml$
+    encrypted_regex: ^data$
+    key_groups:
+      - age:
+          - *primary
